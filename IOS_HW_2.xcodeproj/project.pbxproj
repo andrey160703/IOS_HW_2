@@ -13,6 +13,8 @@
 		A3659CCD28F5912500F60B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3659CCC28F5912500F60B5C /* Assets.xcassets */; };
 		A3659CD028F5912500F60B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3659CCE28F5912500F60B5C /* LaunchScreen.storyboard */; };
 		A3659D3528F62A6E00F60B5C /* UIView_Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3659D3428F62A6E00F60B5C /* UIView_Pin.swift */; };
+		A3755505290ED62E0058668F /* ColorPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3755504290ED62E0058668F /* ColorPaletteView.swift */; };
+		A3755507290F15A10058668F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3755506290F15A10058668F /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A3659CCF28F5912500F60B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3659CD128F5912500F60B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3659D3428F62A6E00F60B5C /* UIView_Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Pin.swift; sourceTree = "<group>"; };
+		A3755504290ED62E0058668F /* ColorPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPaletteView.swift; sourceTree = "<group>"; };
+		A3755506290F15A10058668F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				A3659CCC28F5912500F60B5C /* Assets.xcassets */,
 				A3659CCE28F5912500F60B5C /* LaunchScreen.storyboard */,
 				A3659CD128F5912500F60B5C /* Info.plist */,
+				A3755504290ED62E0058668F /* ColorPaletteView.swift */,
+				A3755506290F15A10058668F /* UIColorExtension.swift */,
 			);
 			path = IOS_HW_2;
 			sourceTree = "<group>";
@@ -146,9 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3659CC828F5912500F60B5C /* ViewController.swift in Sources */,
+				A3755505290ED62E0058668F /* ColorPaletteView.swift in Sources */,
 				A3659CC428F5912500F60B5C /* AppDelegate.swift in Sources */,
 				A3659D3528F62A6E00F60B5C /* UIView_Pin.swift in Sources */,
 				A3659CC628F5912500F60B5C /* SceneDelegate.swift in Sources */,
+				A3755507290F15A10058668F /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
