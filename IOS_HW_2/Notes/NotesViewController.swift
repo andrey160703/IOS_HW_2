@@ -115,7 +115,7 @@ final class NotesViewController : UIViewController{
             let file = try Data(contentsOf: fileURL)
             let data = try! jsonDecoder.decode([String].self, from: file)
             for el in data {
-                var tmp = ShortNote(text: el)
+                let tmp = ShortNote(text: el)
                 dataSource.append(tmp)
             }
             } catch {
