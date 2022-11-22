@@ -40,6 +40,7 @@ final class WelcomeViewController: UIViewController {
     private let incrementButton = UIButton()
     
     let colorPaletteView = ColorPaletteView()
+    let notesViewController = NotesViewController()
     
     private func setupView() {
         view.backgroundColor = .systemGray6
@@ -193,6 +194,7 @@ final class WelcomeViewController: UIViewController {
         colorsButton.addTarget(self, action: #selector(paletteButtonPressed), for: .touchUpInside)
         
         let notesButton = makeMenuButton(title: "📝")
+        notesButton.addTarget(self, action: #selector(notesButtonPressed), for: .touchUpInside)
         let newsButton = makeMenuButton(title: "📰")
 //        buttonsSV = UIStackView(arrangedSubviews:
 //                                        [colorsButton, notesButton, newsButton])
@@ -241,7 +243,23 @@ final class WelcomeViewController: UIViewController {
     @objc
     private func paletteButtonPressed() {
         colorPaletteView.isHidden = !colorPaletteView.isHidden
-        print("я жмал на кнопку")
+        print("я жмал на кнопку с краской")
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+    }
+    
+//    @objc
+//    private func noteButtonPressed() {
+//        notesViewController.isHidden = !colorPaletteView.isHidden
+//        print("я жмал на кнопку с заметками")
+//        let generator = UIImpactFeedbackGenerator(style: .medium)
+//        generator.impactOccurred()
+//    }
+    
+    @objc
+    private func notesButtonPressed() {
+        let navigation = UINavigationController(rootViewController: notesViewController)
+        present(navigation, animated: true)
         let generator = UIImpactFeedbackGenerator(style: .medium)
         generator.impactOccurred()
     }
