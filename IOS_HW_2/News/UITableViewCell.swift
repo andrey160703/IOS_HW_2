@@ -36,7 +36,6 @@ final class NewsCell: UITableViewCell {
     }
     
     private func setupImageView() {
-        newsImageView.image = UIImage(named: "landscape")
         newsImageView.layer.cornerRadius = 8
         newsImageView.layer.cornerCurve = .continuous
         newsImageView.clipsToBounds = true
@@ -60,7 +59,6 @@ final class NewsCell: UITableViewCell {
     }
     
     private func setupTitleLabel() {
-        newsTitleLabel.text = "Hello"
         newsTitleLabel.font = .systemFont(ofSize: 16, weight: .medium)
         newsTitleLabel.textColor = .label
         newsTitleLabel.numberOfLines = 1
@@ -85,7 +83,6 @@ final class NewsCell: UITableViewCell {
 
     
     private func setupDescriptionLabel() {
-        newsDescriptionLabel.text = "World"
         newsDescriptionLabel.font = .systemFont(ofSize: 14, weight: .regular)
         newsDescriptionLabel.textColor = .secondaryLabel
         newsDescriptionLabel.numberOfLines = 0
@@ -110,11 +107,6 @@ final class NewsCell: UITableViewCell {
         ).isActive = true
     }
     
-    public func onLoadConfigure(){
-        newsImageView.image = UIImage(systemName: "arrow.2.circlepath")
-        newsTitleLabel.text = "Loading in progress..."
-        newsDescriptionLabel.text = "Please stand by..."
-    }
     
     public func configure(with viewModel: NewsViewModel){
         newsTitleLabel.text = viewModel.title

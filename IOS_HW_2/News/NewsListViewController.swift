@@ -11,6 +11,7 @@ final class NewsListViewController: UIViewController {
     private var tableView = UITableView(frame: .zero, style: .plain)
     private var isLoading = false
     private var newsViewModels = [NewsViewModel]()
+    private var shimmerView = ShimmerView()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,19 +27,54 @@ final class NewsListViewController: UIViewController {
     
     private func configureTableView() {
         setTableViewUI()
+        
+        setShimmerViewUI()
+        
         setTableViewDelegate()
         setTableViewCell()
         fetchNews()
+        setupNavBar()
     }
     
+    private func setupNavBar() {
+        navigationItem.title = "Articles"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.left"),
+            style: .plain,
+            target: self,
+            action: #selector(goBack)
+        )
+        navigationItem.leftBarButtonItem?.tintColor = .label
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.counterclockwise"),
+            style: .plain,
+            target: self,
+            action: #selector(loadNews)
+        )
+        navigationItem.rightBarButtonItem?.tintColor = .label
+    }
     
     private func setTableViewDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
     }
     
+    private func setShimmerViewUI() {
+        view.addSubview(shimmerView)
+        
+        shimmerView.startAnimating()
+        
+        shimmerView.isHidden = true
+        shimmerView.backgroundColor = .clear
+        shimmerView.pinLeft(to: view)
+        shimmerView.pinTop(to: view.safeAreaLayoutGuide.topAnchor)
+        shimmerView.pinRight(to: view)
+        shimmerView.pinBottom(to: view)
+    }
+    
     private func setTableViewUI() {
         view.addSubview(tableView)
+        
         tableView.backgroundColor = .clear
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.rowHeight = 120
@@ -60,6 +96,7 @@ final class NewsListViewController: UIViewController {
     
     @objc
     func loadNews(){
+        print("А это че, кнопка чтоли???")
         self.isLoading = true
         self.tableView.reloadData()
         self.fetchNews()
@@ -84,26 +121,29 @@ final class NewsListViewController: UIViewController {
 }
 
 extension NewsListViewController : UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isLoading {
+            shimmerView.startAnimating()
+            shimmerView.isHidden = false
             return 1;
         } else {
+            shimmerView.startAnimating()
+            shimmerView.isHidden = true
             return newsViewModels.count
         }
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if isLoading{
-            if let newsCell = tableView.dequeueReusableCell(
-                withIdentifier: NewsCell.reuseIdentifier,
-                for: indexPath
-            ) as? NewsCell{
-                newsCell.onLoadConfigure()
-                return newsCell
-            }
+            print("а где анимация?")
+            shimmerView.startAnimating()
+            shimmerView.isHidden = false
+            return UITableViewCell()
         }
         else{
+            shimmerView.startAnimating()
+            shimmerView.isHidden = true
             let viewModel = newsViewModels[indexPath.row]
             if let newsCell = tableView.dequeueReusableCell(
                 withIdentifier: NewsCell.reuseIdentifier,
@@ -112,16 +152,12 @@ extension NewsListViewController : UITableViewDataSource {
                 newsCell.configure(with: viewModel)
                 return newsCell
             }
-            
+
         }
         return UITableViewCell()
     }
 }
 
-//extension NewsListViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    }
-//}
 
 extension NewsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
