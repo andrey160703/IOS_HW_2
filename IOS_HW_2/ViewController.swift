@@ -196,6 +196,7 @@ final class WelcomeViewController: UIViewController {
         let notesButton = makeMenuButton(title: "📝")
         notesButton.addTarget(self, action: #selector(notesButtonPressed), for: .touchUpInside)
         let newsButton = makeMenuButton(title: "📰")
+        newsButton.addTarget(self, action: #selector(newsButtonPressed), for: .touchUpInside)
 //        buttonsSV = UIStackView(arrangedSubviews:
 //                                        [colorsButton, notesButton, newsButton])
         buttonsSV.addArrangedSubview(colorsButton)
@@ -270,6 +271,13 @@ final class WelcomeViewController: UIViewController {
             self.view.backgroundColor = slider.chosenColor
             self.changeSetupValueLabelColor()
         }
+    }
+    
+    @objc
+    private func newsButtonPressed() {
+        print("Я вжмал на кнопку - где нововсти?")
+        let newsListController = NewsListViewController()
+        navigationController?.pushViewController(newsListController, animated: true)
     }
     
     

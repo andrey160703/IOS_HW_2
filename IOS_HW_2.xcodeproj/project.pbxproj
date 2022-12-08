@@ -19,6 +19,11 @@
 		A39E4B2E292D43E700A1A8F2 /* ShortNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E4B2D292D43E700A1A8F2 /* ShortNote.swift */; };
 		A39E4B30292D443600A1A8F2 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E4B2F292D443600A1A8F2 /* NoteCell.swift */; };
 		A39E4B32292D471E00A1A8F2 /* AddNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39E4B31292D471E00A1A8F2 /* AddNoteCell.swift */; };
+		A3BC9EAE29426B1600C758B5 /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC9EAD29426B1600C758B5 /* NewsListViewController.swift */; };
+		A3BC9EB02942713100C758B5 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC9EAF2942713100C758B5 /* UITableViewCell.swift */; };
+		A3BC9EB2294276C300C758B5 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC9EB1294276C300C758B5 /* NewsViewModel.swift */; };
+		A3BC9EB429427A1B00C758B5 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC9EB329427A1B00C758B5 /* NewsViewController.swift */; };
+		A3BC9EB62942808500C758B5 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC9EB52942808500C758B5 /* URLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		A39E4B2D292D43E700A1A8F2 /* ShortNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNote.swift; sourceTree = "<group>"; };
 		A39E4B2F292D443600A1A8F2 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		A39E4B31292D471E00A1A8F2 /* AddNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCell.swift; sourceTree = "<group>"; };
+		A3BC9EAD29426B1600C758B5 /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		A3BC9EAF2942713100C758B5 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		A3BC9EB1294276C300C758B5 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		A3BC9EB329427A1B00C758B5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		A3BC9EB52942808500C758B5 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 				A3659CCC28F5912500F60B5C /* Assets.xcassets */,
 				A3659CCE28F5912500F60B5C /* LaunchScreen.storyboard */,
 				A3659CD128F5912500F60B5C /* Info.plist */,
+				A3BC9EAF2942713100C758B5 /* UITableViewCell.swift */,
+				A3BC9EB1294276C300C758B5 /* NewsViewModel.swift */,
+				A3BC9EB329427A1B00C758B5 /* NewsViewController.swift */,
+				A3BC9EAD29426B1600C758B5 /* NewsListViewController.swift */,
+				A3BC9EB52942808500C758B5 /* URLSession.swift */,
 			);
 			path = IOS_HW_2;
 			sourceTree = "<group>";
@@ -181,12 +196,17 @@
 			files = (
 				A39E4B2E292D43E700A1A8F2 /* ShortNote.swift in Sources */,
 				A3659CC828F5912500F60B5C /* ViewController.swift in Sources */,
+				A3BC9EB62942808500C758B5 /* URLSession.swift in Sources */,
 				A3755505290ED62E0058668F /* ColorPaletteView.swift in Sources */,
 				A3659CC428F5912500F60B5C /* AppDelegate.swift in Sources */,
 				A39E4B2C292D31BF00A1A8F2 /* NotesViewController.swift in Sources */,
 				A39E4B32292D471E00A1A8F2 /* AddNoteCell.swift in Sources */,
+				A3BC9EAE29426B1600C758B5 /* NewsListViewController.swift in Sources */,
 				A3659D3528F62A6E00F60B5C /* UIView_Pin.swift in Sources */,
 				A39E4B30292D443600A1A8F2 /* NoteCell.swift in Sources */,
+				A3BC9EB02942713100C758B5 /* UITableViewCell.swift in Sources */,
+				A3BC9EB2294276C300C758B5 /* NewsViewModel.swift in Sources */,
+				A3BC9EB429427A1B00C758B5 /* NewsViewController.swift in Sources */,
 				A3659CC628F5912500F60B5C /* SceneDelegate.swift in Sources */,
 				A3755507290F15A10058668F /* UIColorExtension.swift in Sources */,
 			);
